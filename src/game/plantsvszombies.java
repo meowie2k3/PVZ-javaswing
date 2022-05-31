@@ -69,15 +69,16 @@ public class plantsvszombies {
 	mainPanel panel=null;
 	mainTimer timer=null;
 
+	int mx,my;
 
-	int mx,my;//����������
 	plantsvszombies(){
+		//create new game
 		newGame();
 		
-		panel=new mainPanel();
+		panel=new mainPanel(); //create panel
 		panel.setSize(860, 678+35);
 		panel.setVisible(true);
-		timer=new mainTimer(59);
+		timer=new mainTimer(59); //start timer
 		
 	}
 	

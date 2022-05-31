@@ -24,15 +24,11 @@ import java.net.MalformedURLException;
 
 import java.net.URL;
 
-/*
- * ���ڲ���BGM��������Ƶ��12.29���壬�¼��������罩ʬ�����еȣ�����δ��ɣ���todo���
- * 
- */
 
 
 public class SoundAndMusic {
 	private String file_path;
-	private int state;//1û��ʼ 2���ڲ��� 
+	private int state;
 	
 	private String sound_path;
 
@@ -50,8 +46,7 @@ public class SoundAndMusic {
 		if (state!=1) return;
 		state=2;
 
-		//��ƵAPI���֣�������CSDN���ֲ��Ž̳�,���ǻ������⣬ֻ�ܲ���һ�Σ�
-		//----------------------������ƵAPI  ����-------------------------------------
+
 		a=new Thread(new Runnable()
 		{
 			public void run()
@@ -99,7 +94,6 @@ public class SoundAndMusic {
 		});
 		a.start();
 				
-
 		//----------------------������ƵAPI  ����-------------------------------------
 	
 	}
@@ -154,10 +148,6 @@ public class SoundAndMusic {
 			}
 		}).start();
 
-
-
-		    
-         //�¼�����������Ƶ,������CSDN,����ԭ����Ҳ��֪�� ǡ����ʵ��һ�β���
 	}
 	
 

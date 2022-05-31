@@ -31,12 +31,10 @@ public class gamefield {
 	int zombie_die_number;
 	int raw_zombie_number;
 	int zombies_number;
-	int zombie_random_number;//ÓÃÓÚµ÷ÕûÓÎÏ·ÄÑ¶È easy£º15¸ö½©Ê¬£¬random 20£»ÖĞµÈ£º20¸ö½©Ê¬£¬random 50 À§ÄÑ 30¸ö½©Ê¬ random 100
-	
+	int zombie_random_number;//difficulty
 	SoundAndMusic BGM;
 
 
-	
 	
 	void newGame(int zombie_number,int zombie_random_number) {
 		this.zombies_number=zombie_number;
@@ -64,16 +62,16 @@ public class gamefield {
 		
 		plants=new Plants[6][9];
 		
-		sunlight_value=50;
+		sunlight_value=100;
 		BGM=new SoundAndMusic("music/BGM.wav");
 		BGM.StartPlay_BGM();
 	}
 
 /*
- * ÒÔÏÂÊµÏÖÊó±êµã»÷Ğ§¹û£¬
- */
+
+*/
 	void mouseclick(int x,int y) {
-		//¶ÔcardÊµÏÖÊó±êµã»÷Ğ§¹û
+		//ï¿½ï¿½cardÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½
 		for(int a=0;a<cdList.size();a++) {
 			//==========================nut====================
 			if(cdList.get(a).cardname.equals("nut")&&cdList.get(a).canbuyornot==1) {
@@ -160,32 +158,28 @@ public class gamefield {
 				
 				if(slList.get(g).ifclicked(x, y)){
 					slList.remove(g);
-					sunlight_value+=25;
+					sunlight_value+=50;
 				}
-
-				
 
 			}
 
-		
-			
 			if(new Rectangle(785,0,50,50).contains(x, y)) {
 				System.exit(0);
-			}//¹Ø±ÕÓÎÏ·
+			}//close game button
 			
 			
 			if(new Rectangle(710,0,50,50).contains(x, y)) {
 				maingame.runstate=1;
 				
-			}//ÔİÍ£
+			}//pause button
 			
 			if(new Rectangle(625,0,50,50).contains(x, y)) {
 				maingame.runstate=0;
 				
-			}//Æô¶¯
+			}//resume button
 		
 	}
-//==================================ÒÔÉÏ Êó±êµã»÷Ğ§¹û=========================================================
+//==================================ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½=========================================================
 	public void mouse_move(int  mx,int my){
 			if(peashooter!=null&&peashooter.state==3)
 			{
@@ -208,13 +202,13 @@ public class gamefield {
 				sunflower.y=my;
 			}
 	}
-	//=======================ĞéÓ°ÍÏ×§Ğ§¹û===========================================================
+	//=======================ï¿½ï¿½Ó°ï¿½ï¿½×§Ğ§ï¿½ï¿½===========================================================
 	
 	public  void gamepanel(Graphics g) {
 		background.runbackground(g);  //Background
 
 		
-		//===============ÒÔÏÂÎª¿¨Æ¬=============================
+		//===============ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Æ¬=============================
 	
 			if (sunlight_value>=25) {
 			cdList.get(0).showinshop_canbuy(g);
@@ -229,14 +223,16 @@ public class gamefield {
 			if (sunlight_value>=50) {
 			cdList.get(2).showinshop_canbuy(g);
 			}else {
-				cdList.get(2).showinshop_cannotbuy(g);}
+				cdList.get(2).showinshop_cannotbuy(g);
+			}
 			
 			if (sunlight_value>=150) {
 			cdList.get(3).showinshop_canbuy(g);
-			}else {
+			}
+			else {
 				cdList.get(3).showinshop_cannotbuy(g);}
 
-			//=====================ÒÔÏÂÎªÖ²Îï==========================================
+			//=====================ï¿½ï¿½ï¿½ï¿½ÎªÖ²ï¿½ï¿½==========================================
 			
 			for (int h = 0; h < 6; h++)
 			{
@@ -249,13 +245,13 @@ public class gamefield {
 				}
 			}
 			
-			//=================ÍÏ×§µÄÓ°×Ó===============
+			//=================ï¿½ï¿½×§ï¿½ï¿½Ó°ï¿½ï¿½===============
 		if(peashooter!=null)peashooter.shopter_put_show(g);;
 		if(sunflower!=null)sunflower.sun_put_show(g);
 		if(nut!=null)nut.nut_put_show(g);
 		if(ice_peashooter!=null)ice_peashooter.ice_put_show(g);
 		//=================zombie==============================
-		for(  int a= 0 ; a< zbList.size() ; a++   )//¶ÔÓÚ? ,´Ó?Ñ­»·µ½? 
+		for(  int a= 0 ; a< zbList.size() ; a++   )//ï¿½ï¿½ï¿½ï¿½? ,ï¿½ï¿½?Ñ­ï¿½ï¿½ï¿½ï¿½? 
 		{
 		     zbList.get(a).show(g);
 		}
@@ -275,7 +271,7 @@ public class gamefield {
 		{
 			slList.get(ge).paintComponent(g);
 		}
-		g.setFont(new Font("ËÎÌå", 0, 15));
+		g.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", 0, 15));
 		g.drawString(""+sunlight_value, 40, 80);
 	}
 	

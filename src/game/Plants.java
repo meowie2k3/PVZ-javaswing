@@ -12,10 +12,10 @@ public class Plants {
 	int health;
 	int timer;
 	/*
-	 * 0Ϊ�㶹���� 1�����տ� 2�Ǽ�� 3�Ǻ�������
+	 * 
 	 */
-	int type;
-	int state;//1.�˶� 2.���  3.����
+	int type; //0.shooter 1.sun 2.nut 3.ice
+	int state;
 	
 	public Plants() {
 	}
@@ -45,9 +45,8 @@ public class Plants {
 	}
 	
 	/*
-	 * ����Ϊ���в��֣�����clear,shooter���õ�timer��ʵ��
-	 * 
-	 */
+	 
+	*/
 	public void clear() {
 		state=2;
 	}
@@ -301,9 +300,6 @@ public class Plants {
 
 //====================================================================================================
 
-/*
- * ����Ϊֲ�������ʵ��
- */
 
     public void put_disappear() {
     	state=2;

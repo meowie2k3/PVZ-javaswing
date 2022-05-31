@@ -5,10 +5,8 @@ import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 /*
- * ʵ�ֽ�ʬ�����ߣ�move���ͽ�ʳ��eat����������die����
- * �ֱ�ʹ��x,x_show,x_anime,x_action���̻�x������״ֵ̬������x��ͼƬ��ѭ������ͼƬ��ʵ�ֶ���Ч����ʵ�����������ķ���
- * 12.30
- */
+
+*/
 public class redzombie extends zombie {
 	SoundAndMusic a=new SoundAndMusic("music/eat.wav");
 	int x,y,health,page;

@@ -4,10 +4,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /*
- * 所有僵尸的父类
- * 
- * 12.30
- */
+zombie in general
+*/
 public class zombie {
 	int a,b,_health,_page;
 	int state;//1.move2.eat.3.die4.clear
@@ -40,8 +38,8 @@ public class zombie {
 	}
 	
 /*
- * 实现僵尸move
- */
+move
+*/
 	public void move() {
 	}
 	public void move_show(Graphics g){
@@ -52,7 +50,7 @@ public class zombie {
 	}
 	
 	/*
-	 * 实现僵尸eat
+	 * eat animation
 	 */
 	public void eat() {
 	}
@@ -64,7 +62,7 @@ public class zombie {
 	}
 	
 	/*
-	 * 实现僵尸死亡die
+	 * die animation
 	 */
 	public void die() {
 	}
@@ -76,14 +74,14 @@ public class zombie {
 	
 	
 	/*
-	 * 清理僵尸
+	 * 锟斤拷锟斤拷锟斤拷尸
 	 */
 	public void clear() {
 	}
 	
 	
 	/*
-	 * -----------------------------------整体组织----------------------------------------
+	 * -----------------------------------锟斤拷锟斤拷锟斤拷织----------------------------------------
 	 */
 	public void show(Graphics g) {
 	}

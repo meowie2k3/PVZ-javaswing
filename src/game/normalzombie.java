@@ -33,7 +33,7 @@ public class normalzombie extends zombie {
 	}
 	
 /*
- * ʵ�ֽ�ʬmove
+ * move
  */
 	public void move() {
 		state=1;
